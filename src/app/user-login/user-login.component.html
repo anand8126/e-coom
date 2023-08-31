@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="login" *ngIf="!slowLogin">
+      <div class="img">
+        <img
+          src="assets/image/user.png"
+          style="height: 300px; 
+    width: 554px;"
+          alt="image"
+        />
+      </div>
+      <!-- <p>{{authError}} </p> -->
+      <form [formGroup]="sellerLogin" (ngSubmit)="sellerLoginSubmit()">
+        <!-- <h3 class="h3">Seller Login</h3> -->
+        <div class="mb-3">
+          <label class="form-label">Email </label>
+          <input
+            type="email"
+            placeholder="Enter Email"
+            class="form-control"
+            formControlName="email"
+          />
+          <label class="form-label">Password</label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            class="form-control"
+            formControlName="password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary form-control">Login</button>
+        <div class="change">
+          Create Your Account ?
+          <a (click)="openLogin()"> Sign Up</a>
+        </div>
+      </form>
+    </div>
+  
+    <div class="sign-up" *ngIf="slowLogin">
+      <div class="img">
+        <img
+          src="assets/image/create.png"
+          style="height: 400px;     width: 550px;"
+          alt="image"
+        />
+      </div>
+  
+      <form [formGroup]="sellerSignup" (ngSubmit)="sellerSignupSubmit()">
+        <!-- <h3 class="h3">Seller Sign Up</h3> -->
+        <div class="mb-3">
+          <label class="form-label">Name </label>
+          <input
+            type="text"
+            placeholder="Enter Name"
+            class="form-control"
+            formControlName="name"
+          />
+          <label class="form-label">Mobile </label>
+          <input
+            type="text"
+            placeholder="Enter Mobile"
+            class="form-control"
+            formControlName="mobile"
+          />
+          <label class="form-label">Email </label>
+          <input
+            placeholder="Enter Email"
+            type="email"
+            class="form-control"
+            formControlName="email"
+          />
+          <label class="form-label">Password</label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            class="form-control"
+            formControlName="password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary form-control">
+          Sign Up
+        </button>
+        <div class="change">
+          Already Account ?
+          <a (click)="openSignup()"> Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,28 @@
+<ng-container>
+    <h4>Array Form</h4>
+    <form [formGroup]="arrayData" (ngSubmit)="onSubmit()"> <!-- Fixed the onsubmit event binding -->
+      <div>
+        <label class="form-label" for="">Name</label>
+        <input class="form-control" formControlName="name" placeholder="Enter your name" type="text">
+      </div>
+      <div formArrayName="details">
+        <div *ngFor="let detail of details.controls; let i = index"> <!-- Changed "let i is index" to "let i = index" -->
+          <div [formGroupName]="i">{{i+1}}
+            Address
+            <input class="form-control mt-3" formControlName="address" placeholder="Enter your address" type="text">
+            Pin no <input formControlName="pin" class="form-control mt-3" placeholder="Enter your pin no" type="text">
+            <!-- <button (click)="removeDetails(i)">Remove</button> -->
+          </div>
+        </div>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-info mt-5 mb-3">Submit</button> <!-- Changed type from "button" to "submit" -->
+      </div>
+    </form>
+  </ng-container>
+  <div>
+    <button type="button" (click)="addDetails()" class="btn btn-primary mt-5 mb-3">Add</button>
+  </div>
+  
+
+  

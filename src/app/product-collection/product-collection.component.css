@@ -1,0 +1,23 @@
+.col a{
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.img img{
+    width: 120px;
+    padding: 2px;
+    border-radius: 50%;
+    border: 2px solid #9ACD32;
+    box-shadow: 3px 3px 3px 3px grey;
+}
+
+.head p{
+    margin: 8px;
+}
+
+.col :hover{
+    transform: scale(0.9);
+    
+}

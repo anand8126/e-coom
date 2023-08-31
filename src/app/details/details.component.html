@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="main" *ngIf="details">
+    <div class="details">
+    <div class="img">
+      <img [src]="details.image" style="width: 300px; height: 300px" alt="" />
+    </div>
+   
+    <div class="box">
+      <div class="heading">
+        <h1>{{ details.productName }}</h1>
+      </div>
+      <div class="price">
+        <p>{{ details.price }}</p>
+      </div>
+      <span>
+        {{ details.category }}
+      </span>
+      <div class="description">
+        <p>{{ details.description }}</p>
+      </div>
+    </div></div>
+  </div>
+</div>
+<h3 style="text-align: center">{{h3}} </h3>
+<div class="container" *ngIf="details">
+  <div class="main-card" *ngFor="let data of product; let i = index">
+    <div class="card" *ngIf="i < 3 ">
+      <div>
+       
+        <a [routerLink]="'/details/' + data._id"
+          ><img
+            src="{{ data.image }}"
+            style="width: 100px; height: 100px"
+            alt=""
+        /></a>
+      </div>
+      <div>
+        <a [routerLink]="'/details/' + data._id"
+          ><h6>{{ data.productName }}</h6></a
+        >
+      </div>
+      <div>
+        <span>off 50%</span>
+      </div>
+      <div>
+        <p>{{ data.price }}</p>
+      </div>
+      <div>
+        <a href=""> <button>add Cart</button></a>
+        <a href=""> <button>Order Now</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+
+  <div>
+    
+<p-table [value]="items" [tableStyle]="{'min-width': '60rem'}">
+  
+  <ng-template pTemplate="header">
+  
+  </ng-template>
+  <ng-template pTemplate="body" let-item>
+      <tr>
+          <td>{{item.name}}</td>
+         
+          <td>{{item.comment}}</td>
+         
+          <td><p-rating  [ngModel]="[item.rate]" [readonly]="true" [cancel]="false"></p-rating></td>
+        
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">
+          In total there are {{items ? items.length : 0 }} Rating & Reviews.
+      </div>
+  </ng-template>
+</p-table>
+
+
+
+  </div>
+
+  <form [formGroup]="ratingform" (ngSubmit)="submitRating()">
+    <h6 style="text-align: center;">Give your Review with product Rating</h6>
+    <p class="message">{{message}} </p>
+    <div class="">
+    <div>
+      <label class="form-label" for="">Name</label>
+      <input formControlName="name" class="form-control" type="text" >
+    </div>
+      <div><label class="form-label" for="">Comment</label>
+        <input formControlName="comment" class="form-control" type="text" ></div>
+        
+   <div>
+    <label class="form-label" for="">Rating</label>
+    <p-rating class="form-control" formControlName="rate" [cancel]="false"></p-rating></div>
+    </div>
+    <button class="form-control btn btn-primary mt-2 mb-3" type="submit">Send</button>
+  </form>
+</div>

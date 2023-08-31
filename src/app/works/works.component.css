@@ -1,0 +1,46 @@
+.row{
+    background-color:#9acd32
+}
+.row h1 {
+    font-weight: 800;
+    padding:  10px;
+    margin: 5px;
+    text-align: center;
+    font-size: 27px;
+}
+
+.img img {
+    width: 100px;
+    border: 1px solid black;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 3px 3px black;
+}
+
+.head {
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+
+.link{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.link a{
+    color: #fff;
+    padding: 5px;
+    border: 1px solid black;
+   padding-left: 50px;
+   padding-right: 50px;
+    text-decoration: none;
+    text-align: center;
+    background-color: black;
+    border-radius: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 600;
+}

@@ -1,0 +1,138 @@
+<app-product></app-product>
+<app-product-collection></app-product-collection>
+<app-works></app-works>
+
+<div  *ngIf="!details">
+
+    <p-carousel [value]="product" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+        <ng-template let-item pTemplate="item">
+            <div class="border-1 surface-border border-round m-1 text-center py-5 px-3">
+                <div class="mb-3">
+                    <a [routerLink]="'/details/' + item._id"><img style="width: 140px" [src]='item.image' class="w-6 shadow-2" /></a>
+                </div>
+                <div>
+                    <p class="mb-1">{{ item.productName }}</p>
+                    <p class="mt-0 mb-0">{{ '₹' + item.price }}</p>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+
+</div>
+
+
+
+<div class="row">
+    <div class="col">
+        <div class="img">
+            <img src="assets/image/card/1.svg" alt="">
+            <h6>Fulfilment by REcom</h6>
+        </div>
+       
+        <div class="para">
+            <p>Worried about storing, packing, shipping, and delivering your products? Let Recom do it all.</p>
+        </div>
+        <div class="link">
+            <a href="">Learn More</a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="img">
+            <img src="assets/image/card/2.svg" alt="">
+            <h6>REcom Ads</h6>
+        </div>
+       
+        <div class="para">
+            <p>Curious how your products will stand out from your competitors and gain maximum visibility?</p>
+        </div>
+        <div class="link">
+            <a href="">Learn More</a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="img">
+            <img src="assets/image/card/3.svg" alt="">
+            <h6>Shopping Festivals</h6>
+        </div>
+        
+        <div class="para">
+            <p>Get access to India’s biggest shopping festivals, The Big Billion Day, Big Diwali Sale, and more.</p>
+        </div>
+        <div class="link">
+            <a href="">Learn More</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="img">
+            <img src="assets/image/card/4.svg" alt="">
+            <h6>Learning Center</h6>
+        </div>
+       
+        <div class="para">
+            <p>Personalised learning modules, exclusive webinars, tutorial videos, and more to help sell better faster.</p>
+        </div>
+        <div class="link">
+            <a href="">Learn More</a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="img">
+            <img src="assets/image/card/5.svg" alt="">
+            <h6>Account Management</h6>
+        </div>
+       
+        <div class="para">
+            <p>Improve product selection, product pricing, business insights, & more with our expert in-house account</p>
+        </div>
+        <div class="link">
+            <a href="">Learn More</a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="img">
+            <img src="assets/image/card/6.svg" alt="">
+            <h6>Mobile App</h6>
+        </div>
+        
+        <div class="para">
+            <p>Manage your online seller account 24x7 with REcom Seller Hub App. Compatible with all Android & iOS devices.</p>
+        </div>
+        <div class="link">
+            <a href="">Learn More</a>
+        </div>
+    </div>
+</div>
+
+<div class="head">
+    <p>Our top Products</p>
+</div>
+<div class="container">
+    
+    <div class="main-card" *ngFor="let data of product; let i=index">
+        <div class="card" *ngIf="i<6">
+            <div >
+                <a [routerLink]="'/details/' + data._id"><img src="{{data.image}}" style="width: 100px; height: 100px;" alt=""></a>
+            </div>
+            <div class="heading">
+                <a [routerLink]="'/details/' + data._id"><p>{{data.productName}} </p></a>
+            </div>
+            <div>
+                <span>off 50%</span>
+            </div>
+            <div>
+                <p>{{data.price}} </p>
+            </div>
+            <div>
+               <a href=""> <button>add Cart</button></a>
+               <a href=""> <button>Order Now</button></a>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div>
+    <app-track></app-track>
+</div>

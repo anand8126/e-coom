@@ -1,0 +1,47 @@
+.login, .sign-up {
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+  
+}
+
+form{
+    border-top: #0000ff 1px solid;
+    
+    padding: 15px;
+    border-left: 1px solid green;
+    border-right: 2px solid blueviolet;
+    border-bottom: 1px solid black;
+    border-radius: 0px 5px 10px;
+    box-shadow: 3px 3px gray;
+}
+.login .h3, .sign-up .h3{
+    text-align: center;
+    align-items: center;
+}
+
+.form-control{
+    width: 300px;
+}
+
+.change{
+    padding: 10px;
+    text-align: center;
+}
+.change a{
+    cursor: pointer;
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: seagreen;
+}
+
+.change a:hover {
+    color: #0000ff;
+    font-size: bold;
+}
+
+.login :hover{
+    color: chocolate;
+}

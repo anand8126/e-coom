@@ -1,0 +1,45 @@
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success !</strong> Your data has been entered successfully!
+    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+<form [formGroup]="addResto" (ngSubmit)="collectresto()">
+    <div class="mb-3">
+      <label  class="form-label">Name </label>
+      <input type="text" placeholder="John" class="form-control" formControlName="name" required>
+      <div>
+        <span *ngIf="namedata && namedata.invalid && namedata.touched" style="color: red;">Please enter the  Name!</span>
+      </div>
+        <label  class="form-label">Email </label>
+      
+      <input type="email" placeholder="john@gamil.com" class="form-control" formControlName="email">
+      <div>
+        <span style="color: red;" *ngIf="emailData && emailData.invalid && emailData.touched" >Please Enter the email!</span>
+      </div>
+      <label  class="form-label">Address</label>
+      <input type="text" placeholder="M12 Colony US 231471" class="form-control" formControlName="address">
+      <div>
+        <span style="color: red;" *ngIf="addResto.controls.address.invalid && addResto.controls.address.touched && addResto.controls.address" >Please Enter address!</span>
+      
+      </div>
+
+  <div formArrayName="course">
+      <label class="form-label">Course</label>
+      <ng-container *ngFor="let item of addResto.get('course').controls; let i = index">
+        <div >
+          <input type="text"
+           placeholder="Add New Courses"
+           class="form-control mt-2"
+           formControlName={{i}}>
+        </div>
+      </ng-container>
+    </div>
+    
+    <div>
+      <button type="submit" (click)="addCourse()" class="btn btn-success btn-sm mt-3 btn-add"><i>+</i> Add More</button>
+    </div>
+    </div>
+    <button type="submit" [disabled]="addResto.invalid" class="btn btn-primary">Submit</button>
+  </form>

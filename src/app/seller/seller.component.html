@@ -1,0 +1,28 @@
+
+<div class="seller">
+
+<form [formGroup]="SellProduct" (ngSubmit)="postProduct()">
+  <h4>Seller Portal</h4>
+  <p class="message">{{postData}}</p>
+    <div class="mb-3">
+      <label  class="form-label">Product Name </label>
+      <input type="text" class="form-control" placeholder="Enter Product Name"  formControlName="productName">
+      <label  class="form-label">Image  </label>
+      <input type="text" placeholder="Enter Product Image URL " class="form-control" formControlName="image">
+      <label  class="form-label">Price</label>
+      <input type="text" class="form-control" placeholder="Enter Product Price" formControlName="price">
+      <label  class="form-label">Category</label>
+      <input type="text" placeholder="Enter Product Category" class="form-control" formControlName="category">
+      <div class="mb-10">
+        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+        <textarea placeholder="Enter Product Description" class="form-control" formControlName="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+    </div>
+    
+    
+    
+    <button type="submit"  class="btn form-control btn-primary">Post</button>
+  </form>
+  <div>
+    <img src="assets/image/seller.png" alt="" srcset="">
+  </div></div>

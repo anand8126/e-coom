@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="arrayForm">
+      <div formArrayName="group">
+        <ng-container *ngFor="let item of groupControls; let i = index">
+          <div [formGroupName]="i">
+            <label class="form-label"><b>Gourp Name {{i+1}} </b></label>
+            <div>
+              <input
+                type="text"
+                placeholder="Group Name Enter"
+                class="form-control mt-2"
+                formControlName="groupName"
+              >
+            </div>
+            <div formArrayName="userDetails">
+              <ng-container *ngFor="let detail of userDetailsControls; let j = index">
+                <div [formGroupName]="j">
+                  <label class="form-label">Enter Name</label>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Enter Name"
+                      class="form-control mt-2"
+                      formControlName="name"
+                    >
+                  </div>
+
+                  <label class="form-label">Enter Mobile</label>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Enter Mobile"
+                      class="form-control mt-2"
+                      formControlName="mobile"
+                    >
+                  </div>
+
+                  <label class="form-label">Enter Email</label>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Enter Email"
+                      class="form-control mt-2"
+                      formControlName="email"
+                    >
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+  
+          </div>
+        </ng-container>
+      </div>
+
+      <div>
+        <button type="button" (click)="addGroup()" class="btn btn-success btn-sm mt-3 btn-add">
+          <i>+</i> Add More Group
+        </button>
+      </div>
+      <button type="button" class="btn btn-danger mt-3" (click)="data()">submit</button>
+    </form>
+  </div>
+</div>

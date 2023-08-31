@@ -1,0 +1,22 @@
+.message{
+    color: green;
+    text-align: center;
+}
+.seller{
+    margin: 15px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px
+}
+
+.seller .form-control{
+    width: 500px;
+}
+.seller img{
+    width: 300px;
+    height: 450px;
+}
+
+.seller h4{
+    text-align: center;
+}

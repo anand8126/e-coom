@@ -1,0 +1,38 @@
+<div>
+
+    <div *ngFor="let item of products?.slice(start,start+rows)" class="filter">
+      
+        <p-chip [label]="item.category" [removable]="true" > </p-chip>
+        
+    </div>
+</div>
+
+<p-table [value]="products?.slice(start, start + rows)" [tableStyle]="{ 'min-width': '50rem' }">
+    
+    <ng-template pTemplate="header">
+       
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr class="services">
+            <td><a [routerLink]="'/details/' + product._id"><img [src]="product.image" style="height: 229px; width: 239px;" alt="" srcset=""></a></td>
+            <td class="text-part">
+               <a [routerLink]="'/details/' + product._id"> <p>{{ product.productName }}</p></a>
+                <p>{{ product.price }}</p>
+                <p>{{ product.category }}</p>
+                <p>{{ product.description }}</p>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<div>
+   
+    <p-paginator
+        (onPageChange)="PageChange($event)"
+        [first]="start"
+        [rows]="rows"
+    [totalRecords]="totalRecords"
+        [showFirstLastIcon]="false"
+        [showCurrentPageReport]="true"
+        >
+    </p-paginator>
+</div>

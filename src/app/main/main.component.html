@@ -1,0 +1,43 @@
+<div class="header">
+  <div class="header-bar">
+    <div class="logo">
+      <a href=""><img style="height: 50px;width: 100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLETvHNnJug2CVEhA9MLF__5LRQVABFGU40A&usqp=CAU" alt="" srcset=""></a>
+    </div>
+    <div [ngSwitch]="menuType" >
+
+    <ul *ngSwitchCase="'default'">
+      <li> <a href="">Home</a></li>
+      <li><a routerLink="/service">Service</a></li>
+      <li><a routerLink="/seller-login">Seller</a></li>
+      <li><a routerLink="/user-login">User</a></li>
+      <li><a href="">Cart(0)</a></li>
+    </ul>
+
+
+    <ul *ngSwitchCase="'seller'">
+
+      <li><a routerLink="seller">Add</a></li>
+
+      <li><a routerLink="seller-list">List</a></li>
+
+      <li><a (click)="logout()" >Logout</a></li>
+
+      <li><a>Name</a></li>
+
+    </ul>
+
+    <ul *ngSwitchCase="'user'">
+
+      <li><a routerLink="servies">Product</a></li>
+
+      <li><a routerLink="seller-list">Services</a></li>
+
+      <li><a (click)="logout()" >Logout</a></li>
+
+      <li><a>Name</a></li>
+
+    </ul>
+
+    </div>
+  </div>
+</div>
